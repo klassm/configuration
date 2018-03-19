@@ -1,0 +1,51 @@
+!! URxvt
+URxvt*saveLines: 12000
+URxvt*reverseVideo: false
+URxvt*loginShell: true
+URxvt.urgentOnBell: true
+URxvt*termName: rxvt-256color
+
+!! URxvt -> style
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: plain
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+URxvt*transparent: false
+URxvt.shading: 20
+
+URxvt*fading:  15
+
+URxvt.depth: 32
+URxvt.background: #1e1e1e
+URxvt.foreground: #fcfcfc
+URxvt.color4: RoyalBlue
+URxvt.color12: RoyalBlue
+
+!! URxvt -> font
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+URxvt.italicFont: xft:DejaVu Sans Mono:italic:pixelsize=12:antialias=true:hinting=true
+URxvt.bolditalicFont:  xft:DejaVu Sans Mono:bold:italic:pixelsize=12:antialias=true:hinting=true
+
+!! URxvt -> libs
+urxvt.perl-lib: /usr/lib/urxvt/perl/
+urxvt.perl-ext-common:  default,matcher,font-size,clipboard,url-select,keyboard-select
+!urxvt.matcher.button:   1
+!URxvt.tabbed.tabbar-fg: 8
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg:    2
+!URxvt.tabbed.tab-bg:    0
+
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+URxvt.urlLauncher:          chromium
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
