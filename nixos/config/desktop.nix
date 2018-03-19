@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     arc-theme arc-icon-theme
     elementary-icon-theme
-    pnmixer aumix pamix
+    pnmixer pamix pulseaudio
   ];
   # Enable the X11 windowing system.
   services.xserver = {
