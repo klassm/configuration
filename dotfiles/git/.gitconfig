@@ -1,0 +1,13 @@
+[user]
+    name = Matthias Klass
+    email = matthias.klass@gmail.com
+[alias]
+    st = status
+    co = checkout
+[core]
+    autocrlf = input
+
+[includeIf "gitdir:~/IdeaProjects/tng"]
+  path = .gitconfig-tng
+[includeIf "gitdir:~/IdeaProjects/bsh"]
+  path = .gitconfig-tng
