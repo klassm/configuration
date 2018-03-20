@@ -73,7 +73,6 @@ in {
     rxvt_unicode-with-plugins
     blueman volumeicon
     xfce.xfce4_power_manager_gtk3
-    apulse pamix pavucontrol
     clipster
     lxappearance-gtk3
   ];

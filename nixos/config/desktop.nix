@@ -4,7 +4,8 @@
   environment.systemPackages = with pkgs; [
     arc-theme arc-icon-theme
     elementary-icon-theme
-    pnmixer pamix pulseaudio
+    pulseaudioFull pasystray
+    pavucontrol
   ];
   # Enable the X11 windowing system.
   services.xserver = {
@@ -17,5 +18,7 @@
     displayManager.logToJournal = true;
     displayManager.lightdm.enable = true;
   };
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
 }
 
