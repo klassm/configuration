@@ -6,6 +6,7 @@
     elementary-icon-theme
     pulseaudioFull pasystray
     pavucontrol
+    zoom-us
   ];
   # Enable the X11 windowing system.
   services.xserver = {

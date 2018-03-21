@@ -3,11 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+
 let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-in {
+  unstable = import <unstable> {};
+
+in  {
   imports =
     [ # Include the results of the hardware scan.
       ./oh-my-zsh.nix
@@ -15,13 +15,10 @@ in {
       ./desktop.nix
     ];
 
+
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
+    packageOverrides = import ./pkgs;
   };
 
   # Use the GRUB 2 boot loader.
