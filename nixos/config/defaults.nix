@@ -61,6 +61,7 @@ in  {
     blueman volumeicon
     xfce.xfce4_power_manager_gtk3
     clipster
+    figlet hashdeep
     lxappearance-gtk3
   ];
 
