@@ -12,6 +12,7 @@ in  {
     [ # Include the results of the hardware scan.
       ./oh-my-zsh.nix
       ./klassm.nix
+      ./development.nix
       ./desktop.nix
     ];
 
@@ -21,51 +22,23 @@ in  {
     packageOverrides = import /etc/nixos/config/pkgs;
   };
 
-  #
   environment.systemPackages = with pkgs; [ 
-    thunderbird
-    unstable.vim
-    unstable.i3
-    unstable.i3status
-    unstable.ansible
-    unstable.terraform
-    nodejs-8_x
-    i3lock xautolock
-    unzip
-    direnv
-    docker
-    flyway
-    git
+    zip unzip
     openjdk
     peco
     python3
-    redis
-    rofi rofi-pass roficlip fzf
     arandr
-    tmux
-    yarn
     gnupg
-    pass
     ranger
     chromium
-    roxterm
     wget curl tree
-    unstable.tmux
     cryptsetup
-    networkmanagerapplet
+    unstable.tmux
     gnome3.nautilus
-    jetbrains.idea-ultimate
-    xclip
     stow
     rxvt_unicode-with-plugins
-    blueman volumeicon
-    xfce.xfce4_power_manager_gtk3
-    clipster
-    figlet hashdeep
-    lxappearance-gtk3
   ];
 
-  
   networking = {
     networkmanager.enable = true;
     firewall = {
