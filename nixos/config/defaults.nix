@@ -30,7 +30,7 @@ in  {
     arandr
     gnupg
     ranger
-    chromium
+    unstable.chromium
     wget curl tree
     cryptsetup
     unstable.tmux

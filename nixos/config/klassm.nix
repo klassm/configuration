@@ -16,7 +16,8 @@ in {
         "wheel"
         "audio" "video"
         "dialout"
-        "input" ]
+        "input"
+        "libvirtd" ]
         ++ pkgs.lib.optional hasnm "networkmanager"
         ++ pkgs.lib.optional hasVBox "vboxusers"
         ++ pkgs.lib.optional hasDocker "docker";

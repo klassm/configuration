@@ -23,6 +23,7 @@ in {
     unstable.i3
     unstable.i3status
     i3lock xautolock
+    firefox
   ];
   # Enable the X11 windowing system.
   services.xserver = {

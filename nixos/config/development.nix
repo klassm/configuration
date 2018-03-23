@@ -17,6 +17,9 @@ in {
     figlet hashdeep
     yarn
     jq
+    virtualbox
+    virtmanager qemu aqemu libvirt
   ];
+  virtualisation.libvirtd.enable = true;
 }
 

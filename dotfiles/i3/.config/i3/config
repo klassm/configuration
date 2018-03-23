@@ -246,7 +246,7 @@ exec_always pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id thunderbird
-#exec --no-startup-id feh --bg-scale ~/Bilder/55.jpg
+exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper.jpg
 exec --no-startup-id ~/.i3/startup
 
 # Theme colors
@@ -280,12 +280,12 @@ for_window [class="^.*"] border pixel 2
 
 set $mode_display Screen (d) default, (r) extern right, (l) extern left (c) clone (h) only extern (a) augsburg
 mode "$mode_display" {
-    bindsym d exec --no-startup-id ~/.screenlayout/display.py intern, mode "default"
-    bindsym l exec --no-startup-id ~/.screenlayout/display.py extend_left, mode "default"
-    bindsym r exec --no-startup-id ~/.screenlayout/display.py extend_right, mode "default"
-    bindsym c exec --no-startup-id ~/.screenlayout/display.py clone, mode "default"
-    bindsym h exec --no-startup-id ~/.screenlayout/display.py extern, mode "default"
-    bindsym a exec --no-startup-id ~/.screenlayout/augsburg.sh extern, mode "default"
+    bindsym d exec --no-startup-id python3 ~/.screenlayout/display.py intern, mode "default"
+    bindsym l exec --no-startup-id python3 ~/.screenlayout/display.py extend_left, mode "default"
+    bindsym r exec --no-startup-id python3 ~/.screenlayout/display.py extend_right, mode "default"
+    bindsym c exec --no-startup-id python3 ~/.screenlayout/display.py clone, mode "default"
+    bindsym h exec --no-startup-id python3 ~/.screenlayout/display.py extern, mode "default"
+    bindsym a exec --no-startup-id python3 ~/.screenlayout/augsburg.sh extern, mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }

@@ -1,5 +1,3 @@
-#!/run/current-system/sw/bin/python3
-
 import subprocess
 import sys
 import re
@@ -31,8 +29,8 @@ class Display:
         self.resolutions = []
 
     def do_sort_resolutions(self):
-        sorted_resolutions = sorted(map(lambda r: map(lambda p: int(p), r.split("x")), self.resolutions), reverse=True)
-        self.resolutions = map(lambda x: str(x[0]) + "x" + str(x[1]), sorted_resolutions)
+        sorted_resolutions = sorted(map(lambda r: list(map(lambda p: int(p), list(r.split("x")))), self.resolutions), reverse=True)
+        self.resolutions = list(map(lambda x: str(x[0]) + "x" + str(x[1]), list(sorted_resolutions)))
 
     def __repr__(self):
         return self.name + " (" + str(self.type) + ") resolutions=" + str(self.resolutions)
@@ -48,7 +46,7 @@ class DisplayConfiguration:
         return Display(name, type)
 
     def find_display(self):
-        output = subprocess.check_output(["xrandr"]).split("\n")
+        output = subprocess.check_output(["xrandr"]).decode('UTF-8').splitlines()
         displays = []
         display = None
         for line in output:
@@ -65,7 +63,7 @@ class DisplayConfiguration:
         return displays
 
     def displays_with_type(self, type):
-        return filter(lambda d: d.type == type, self._displays)
+        return list(filter(lambda d: d.type == type, self._displays))
 
     def _only_display_with_type(self, type):
         with_type = self.displays_with_type(type)
@@ -91,20 +89,20 @@ class DisplayConfiguration:
 
 
 def modes():
-    print execute(["xrandr" "-q"])
+    print(execute(["xrandr", "-q"]))
 
 
 def intern(displays):
     off_command_for_external = map(lambda e: ['--output', e.name, '--off'], displays.externals())
     chained_off_command_for_externals = list(itertools.chain(*off_command_for_external))
-    print execute(
-        ["xrandr", "--output", displays.internal().name, "--auto"] + chained_off_command_for_externals)
+    print(execute(
+        ["xrandr", "--output", displays.internal().name, "--auto"] + chained_off_command_for_externals))
 
 
 def extern(displays):
-    print execute(
+    print(execute(
         ["xrandr", "--output", displays.internal().name, "--off", "--output", displays.only_connected_external().name,
-         "--auto"])
+         "--auto"]))
 
 
 def clone(displays):
@@ -112,46 +110,46 @@ def clone(displays):
     connected = displays.connected()
     connected.remove(internal)
     clone_resolution = first_matching_resolution_in(connected + [internal])
-    output_for_connected = map(lambda d: ["--output", d.name, "--mode", clone_resolution, "--same-as", internal.name],
-                               connected)
+    output_for_connected = list(map(lambda d: ["--output", d.name, "--mode", clone_resolution, "--same-as", internal.name],
+                               connected))
     chained_output = list(itertools.chain(*output_for_connected))
-    print execute(
-        ["xrandr", "--output", internal.name, "--mode", clone_resolution] + chained_output)
+    print(execute(
+        ["xrandr", "--output", internal.name, "--mode", clone_resolution] + chained_output))
 
 
 def extend_left(displays):
-    print execute(
+    print(execute(
         ["xrandr", "--output", displays.internal().name, "--auto", "--output", displays.only_connected_external().name,
          "--auto",
-         "--left-of", displays.internal().name])
+         "--left-of", displays.internal().name]))
 
 
 def extend_right(displays):
-    print execute(
+    print(execute(
         ["xrandr", "--output", displays.internal().name, "--auto", "--output", displays.only_connected_external().name,
          "--auto",
-         "--right-of", displays.internal().name])
+         "--right-of", displays.internal().name]))
 
 
-def first_matching_resolution_in(displays):
-    if len(displays) == 1:
-        return displays[0].resolutions[0]
-    first = displays[0]
-    other = displays[1:]
+def first_matching_resolution_in(displaysToUse):
+    if len(displaysToUse) == 1:
+        return list(displaysToUse[0].resolutions)[0]
+    first = displaysToUse[0]
+    other = displaysToUse[1:]
     for res in first.resolutions:
         found = True
         for display in other:
             found = found and (res in display.resolutions)
         if found:
             return res
-    raise Exception("cannot find common resolution in " + str(displays))
+    raise Exception("cannot find common resolution in " + str(displaysToUse))
 
 def recreatePolybar():
     subprocess.call(["/home/klassm/.config/polybar/launch"])
 
 def execute(command):
-    print " ".join(command)
-    return subprocess.check_output(command)
+    print(" ".join(command))
+    return subprocess.check_output(command).decode('UTF-8')
 
 
 if __name__ == '__main__':
@@ -171,7 +169,7 @@ if __name__ == '__main__':
     elif parameter == 'extend_right':
         extend_right(displays)
     else:
-        print """
+        print ("""
     Usage:
     display <intern | extern | clone | extend_left | extend_right>
     
@@ -182,5 +180,5 @@ if __name__ == '__main__':
     clone         Gleiche Ausgabe auf beiden Bildschirmen
     extend_left   Bild auf externem Bildschirm (links) erweitern
     extend_right  Bild auf externem Bildschirm (rechts) erweitern
-    """
+    """)
 
