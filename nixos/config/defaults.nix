@@ -18,7 +18,7 @@ in  {
 
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = import ./pkgs;
+    packageOverrides = import /etc/nixos/config/pkgs;
   };
 
   #
@@ -40,7 +40,7 @@ in  {
     peco
     python3
     redis
-    rofi
+    rofi rofi-pass roficlip fzf
     arandr
     tmux
     yarn

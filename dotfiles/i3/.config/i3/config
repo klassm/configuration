@@ -52,7 +52,7 @@ bindsym $mod+Print exec scrot -ue 'mv $f ~/Screenshots' && sleep 1 && exec notif
 bindsym $mod+Shift+Print exec notify-send 'selection will be saved to ~/Screenshots' & exec scrot -se 'mv $f ~/Screenshots' && sleep 1 && exec notify-send 'screenshot has been saved in ~/Screenshots'
 bindsym $mod+Shift+h exec qpdfview i3_help.pdf
 bindsym $mod+Ctrl+x exec xkill
-bindsym $mod+Ctrl+v exec rofi-clip
+bindsym $mod+Ctrl+v exec roficlip
 bindsym $mod+Ctrl+p exec rofi-pass
 
 # focus_follows_mouse no

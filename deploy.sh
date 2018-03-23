@@ -10,7 +10,7 @@ export NIX_PATH="custompkgs=${PWD}/nix/default.nix:$NIX_PATH"
 NIXOS_SRC="${PWD}/nixos"
 NIXOS_DEST="/etc/nixos"
 
-sudo rm -f "${NIXOS_DEST}/config" "${NIXOS_DEST}/configuration.nix"
+sudo rm -rf "${NIXOS_DEST}/config" "${NIXOS_DEST}/configuration.nix"
 sudo ln -s "${NIXOS_SRC}/config" "${NIXOS_DEST}/config"
 sudo ln -f "${NIXOS_SRC}/configuration.nix" "${NIXOS_DEST}/configuration.nix"
 
