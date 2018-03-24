@@ -24,6 +24,8 @@ in {
     unstable.i3status
     i3lock xautolock
     firefox
+    gparted
+    udiskie
   ];
   # Enable the X11 windowing system.
   services.xserver = {

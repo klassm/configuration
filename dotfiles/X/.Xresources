@@ -18,7 +18,7 @@ URxvt.shading: 20
 URxvt*fading:  15
 
 URxvt.depth: 32
-URxvt.background: #1e1e1e
+URxvt.background: #0a0a0a
 URxvt.foreground: #fcfcfc
 URxvt.color4: RoyalBlue
 URxvt.color12: RoyalBlue

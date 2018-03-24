@@ -13,7 +13,7 @@ in {
     direnv
     flyway
     git
-    jetbrains.idea-ultimate
+    jetbrains.idea-ultimate unstable.android-studio
     figlet hashdeep
     yarn
     jq
@@ -21,5 +21,8 @@ in {
     virtmanager qemu aqemu libvirt
   ];
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.extraOptions = ["-l"];
+  virtualisation.libvirtd.extraConfig = "listen_tls = 0\nlisten_tcp = 1";
+  boot.kernelModules = [ "kvm-intel" ];
 }
 

@@ -1,10 +1,13 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  unstable = import <unstable> {};
+
+in {
   environment = {
     systemPackages = with pkgs; [
-      oh-my-zsh
+      oh-my-zsh unstable.zsh
       zsh-syntax-highlighting
       zsh-peco-history
     ];
