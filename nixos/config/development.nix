@@ -13,7 +13,8 @@ in {
     direnv
     flyway
     git
-    jetbrains.idea-ultimate unstable.android-studio
+    jetbrains.idea-ultimate
+    unstable.android-studio
     figlet hashdeep
     yarn
     jq

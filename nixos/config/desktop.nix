@@ -26,15 +26,19 @@ in {
     firefox
     gparted
     udiskie
+    gnome3.file-roller
   ];
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
     layout = "de";
     xkbOptions = "ctrl:nocaps, eurosign:e";
+    xkbVariant = "nodeadkeys";
+    exportConfiguration = true;
     libinput.enable = true;
     windowManager.i3.enable = true;
-  
+    localectlFix.enable = true;
+
     displayManager.logToJournal = true;
     displayManager.lightdm.enable = true;
   };

@@ -14,6 +14,7 @@ in  {
       ./klassm.nix
       ./development.nix
       ./desktop.nix
+      ./localectl_fix.nix
     ];
 
 

@@ -243,6 +243,7 @@ bar {
 # Autostart applications
 exec_always nm-applet
 exec_always pasystray
+exec --no-startup-id setxkbmap
 exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id thunderbird
