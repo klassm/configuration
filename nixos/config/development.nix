@@ -20,6 +20,7 @@ in {
     virtualbox
     virtmanager qemu aqemu libvirt
     gw
+    awscli
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];
