@@ -35,4 +35,11 @@ in {
     consoleKeyMap = "de";
     defaultLocale = "de_DE.UTF-8";
   };
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "*/5 * * * *      klassm    /home/klassm/.config/i3/random_wallpaper.sh"
+    ];
+  };
 }

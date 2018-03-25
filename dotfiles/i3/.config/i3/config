@@ -247,7 +247,7 @@ exec --no-startup-id setxkbmap
 exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id thunderbird
-exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper.jpg
+exec --no-startup-id ~/.config/i3/random_wallpaper.sh
 exec --no-startup-id ~/.i3/startup
 
 # Theme colors
@@ -308,7 +308,7 @@ mode "$mode_system" {
 bindsym $mod+Shift+x mode "$mode_system"
 set $mode_system (l)ock (e)xit switch_(u)ser (s)uspend (h)ibernate (r)eboot (Shift+s)hutdown
 
-exec --no-startup-id xautolock -time 4 -locker "i3lock -n -c 000000"
+exec --no-startup-id xautolock -time 4 -locker "i3lock-fancy"
 
 
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 '-5%' && killall -USR1 i3status

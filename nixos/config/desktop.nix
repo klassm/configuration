@@ -22,7 +22,7 @@ in {
     xclip
     unstable.i3
     unstable.i3status
-    i3lock xautolock
+    i3lock-fancy xautolock
     firefox
     gparted
     udiskie

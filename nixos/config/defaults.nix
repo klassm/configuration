@@ -38,6 +38,7 @@ in  {
     gnome3.nautilus
     stow
     rxvt_unicode-with-plugins
+    cron
   ];
 
   networking = {
