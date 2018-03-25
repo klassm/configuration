@@ -5,5 +5,6 @@ let
     zsh-peco-history = callPackage ./zsh-peco-history {};
     roficlip = callPackage ./roficlip {};
     hashdeep = callPackage ./hashdeep {};
+    gw = callPackage ./gw {};
   };
 in custom

@@ -19,6 +19,7 @@ in {
     jq
     virtualbox
     virtmanager qemu aqemu libvirt
+    gw
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];
