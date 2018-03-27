@@ -17,10 +17,10 @@ in {
         "audio" "video"
         "dialout"
         "input"
-        "libvirtd" ]
-        ++ pkgs.lib.optional hasnm "networkmanager"
-        ++ pkgs.lib.optional hasVBox "vboxusers"
-        ++ pkgs.lib.optional hasDocker "docker";
+        "libvirtd"
+        "docker"
+        "vboxusers"
+        "networkmanager" ];
       home = "/home/klassm";
       createHome = true;
       shell = "/run/current-system/sw/bin/zsh";
@@ -39,7 +39,7 @@ in {
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/5 * * * *      klassm    /home/klassm/.config/i3/random_wallpaper.sh"
+      "*/5 * * * *      klassm    /home/klassm/.config/i3/random_wallpaper.sh > /tmp/random_wallpaper.log"
     ];
   };
 }

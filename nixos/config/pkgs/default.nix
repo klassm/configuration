@@ -6,5 +6,6 @@ let
     roficlip = callPackage ./roficlip {};
     hashdeep = callPackage ./hashdeep {};
     gw = callPackage ./gw {};
+    scaleft-client-tools = callPackage ./scaleft-client-tools {};
   };
 in custom

@@ -7,7 +7,7 @@
 [core]
     autocrlf = input
 
-[includeIf "gitdir:~/IdeaProjects/tng"]
-  path = .gitconfig-tng
-[includeIf "gitdir:~/IdeaProjects/bsh"]
-  path = .gitconfig-tng
+[includeIf "gitdir:~/IdeaProjects/tng/"]
+  path = ~/.gitconfig-tng
+[includeIf "gitdir:~/IdeaProjects/bsh/"]
+  path = ~/.gitconfig-tng

@@ -27,6 +27,8 @@ in {
     gparted
     udiskie
     gnome3.file-roller
+    mirage
+    neomutt
   ];
   # Enable the X11 windowing system.
   services.xserver = {
