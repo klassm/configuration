@@ -4,6 +4,30 @@ let
   unstable = import <unstable> {};
 
 in {
+  nixpkgs.overlays =
+      [
+        (self: super:
+         let
+           name = "idea-ultimate-${version}";
+           version = "2018.1";
+           sha256 = "0n98gjm3v7qdyd1hc82zg57gyhwbamf27dyal1z71xfav4z5zb10";
+           oldVersion = "2017.2.5"; # super.lib.getVersion super.idea.idea-ultimate;
+           overlayIsNewer =  super.lib.versionOlder oldVersion version;
+         in if overlayIsNewer
+            then {
+              idea-ultimate = super.jetbrains.idea-ultimate.overrideAttrs ( oldAttrs: {
+                inherit name version;
+                src = super.fetchurl {
+                  url = "https://download.jetbrains.com/idea/ideaIU-${version}.tar.gz";
+                  inherit sha256;
+                };
+              });
+            } else {
+             idea-ultimate = super.jetbrains.idea-ultimate;
+            }
+        )
+      ];
+
   environment.systemPackages = with pkgs; [
     terraform-fixed
     nodejs-8_x
@@ -13,7 +37,7 @@ in {
     direnv
     unstable.flyway
     git
-    jetbrains.idea-ultimate
+    idea-ultimate
     unstable.android-studio
     figlet hashdeep
     unstable.yarn
