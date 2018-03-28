@@ -1,5 +1,4 @@
 { stdenv, fetchurl, pkgconfig, unzip, pkgs }:
-#with import <nixpkgs> {};
 
 stdenv.mkDerivation rec {
   version = "0.0.1";

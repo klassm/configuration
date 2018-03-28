@@ -5,7 +5,7 @@ let
 
 in {
   environment.systemPackages = with pkgs; [
-    unstable.terraform
+    terraform-fixed
     nodejs-8_x
     unstable.ansible
     redis
