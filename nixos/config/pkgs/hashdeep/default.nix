@@ -18,6 +18,7 @@ stdenv.mkDerivation rec {
     make
     make install
   '';
+
   meta = {
     description = "hashdeep";
     homepage = https://github.com/jessek/hashdeep;

@@ -1,15 +1,15 @@
-{ stdenv, fetchurl, pkgconfig, unzip, pkgs }:
+{ stdenv, fetchgit, pkgconfig, pkgs }:
 
 stdenv.mkDerivation rec {
   version = "0.0.1";
   name = "roficlip-${version}";
-  
-  src = fetchurl {
-    url = "https://github.com/gilbertw1/roficlip/archive/master.zip";
-    sha256 = "401492ec971060a2549359e48f2dac1205b17cb65d769000d7b935aa10f419bc";
+
+  src = fetchgit {
+    url = "git://github.com/gilbertw1/roficlip";
+    rev = "521369d12eab039e2c1a6418e1b9fa8eb5bd9126";
   };
   
-  buildInputs = [ pkgconfig unzip ];
+  buildInputs = [ pkgconfig ];
   
   installPhase = ''
     mkdir -p $out/bin
