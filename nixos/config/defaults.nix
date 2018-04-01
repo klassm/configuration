@@ -13,6 +13,7 @@ in  {
       ./oh-my-zsh.nix
       ./klassm.nix
       ./development.nix
+      ./mail.nix
       ./desktop.nix
       ./localectl_fix.nix
     ];

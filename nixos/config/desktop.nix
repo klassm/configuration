@@ -10,7 +10,6 @@ in {
     pulseaudioFull pasystray
     pavucontrol
     zoom-us
-    thunderbird
     unstable.vim
     rofi rofi-pass roficlip fzf
     pass
@@ -29,11 +28,6 @@ in {
     gnome3.file-roller
     mirage
     shutter
-    neomutt # mutt-with-sidebar
-    offlineimap msmtp gnupg abook notmuch urlview
-    sxiv
-    procmail
-    unstable.w3m
   ];
   # Enable the X11 windowing system.
   services.xserver = {
