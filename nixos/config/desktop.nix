@@ -25,6 +25,7 @@ in {
     mirage
     shutter
   ];
+  
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -39,8 +40,16 @@ in {
     displayManager.logToJournal = true;
     displayManager.lightdm.enable = true;
   };
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+
+    # NixOS allows either a lightweight build (default) or full build of PulseAudio to be installed.
+    # Only the full build has Bluetooth support, so it must be selected here.
+    package = pkgs.pulseaudioFull;
+  };
   hardware.bumblebee.enable = true;
+  hardware.bluetooth.enable = true;
 }
 
