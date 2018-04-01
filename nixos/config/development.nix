@@ -30,11 +30,9 @@ in {
 
   environment.systemPackages = with pkgs; [
     terraform-fixed
-    nodejs-8_x
     unstable.ansible
     redis
     docker docker_compose
-    direnv
     unstable.flyway
     git
     idea-ultimate
@@ -49,7 +47,6 @@ in {
     gettext
     postgresql
     scaleft-client-tools
-    binutils
     openssl
   ];
   virtualisation.libvirtd.enable = true;

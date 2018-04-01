@@ -10,21 +10,17 @@ in {
     pulseaudioFull pasystray
     pavucontrol
     zoom-us
-    unstable.vim
-    rofi rofi-pass roficlip fzf
-    pass
+    gnome3.nautilus
+    arandr
+    gnupg
     networkmanagerapplet
     blueman volumeicon
     xfce.xfce4_power_manager_gtk3
     clipster
     lxappearance-gtk3
     xclip
-    unstable.i3
-    unstable.i3status
-    i3lock-fancy xautolock
-    firefox
+    firefox unstable.chromium
     gparted
-    udiskie
     gnome3.file-roller
     mirage
     shutter

@@ -10,14 +10,14 @@ let
 in  {
   imports =
     [ # Include the results of the hardware scan.
-      ./oh-my-zsh.nix
       ./klassm.nix
       ./development.nix
       ./mail.nix
       ./desktop.nix
+      ./i3.nix
+      ./terminal.nix
       ./localectl_fix.nix
     ];
-
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -26,20 +26,12 @@ in  {
 
   environment.systemPackages = with pkgs; [ 
     zip unzip
-    openjdk
-    peco
-    python3
-    arandr
-    gnupg
-    ranger
-    unstable.chromium
-    wget curl tree
+    openjdk python3 nodejs-8_x
     cryptsetup
-    unstable.tmux
-    gnome3.nautilus
     stow
-    rxvt_unicode-with-plugins
     cron
+    udiskie
+    pass
   ];
 
   networking = {
