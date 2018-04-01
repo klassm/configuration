@@ -2,3 +2,4 @@ result
 .idea
 *.iml
 *.swp
+dotfiles/mutt/.mutt/cache
