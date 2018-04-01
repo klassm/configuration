@@ -14,7 +14,7 @@ sudo rm -rf "${NIXOS_DEST}/config" "${NIXOS_DEST}/configuration.nix"
 sudo ln -s "${NIXOS_SRC}/config" "${NIXOS_DEST}/config"
 sudo ln -f "${NIXOS_SRC}/configuration.nix" "${NIXOS_DEST}/configuration.nix"
 
-stow -d dotfiles -t ~  X zsh editor screenlayout i3 git
+stow -d dotfiles -t ~  X zsh editor screenlayout i3 git mutt
 
 
 # Use lxappearance to choose a theme

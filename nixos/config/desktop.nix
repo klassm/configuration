@@ -28,7 +28,12 @@ in {
     udiskie
     gnome3.file-roller
     mirage
-    neomutt
+    shutter
+    neomutt # mutt-with-sidebar
+    offlineimap msmtp gnupg abook notmuch urlview
+    sxiv
+    procmail
+    unstable.w3m
   ];
   # Enable the X11 windowing system.
   services.xserver = {

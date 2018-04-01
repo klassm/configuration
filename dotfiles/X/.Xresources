@@ -24,10 +24,10 @@ URxvt.color4: RoyalBlue
 URxvt.color12: RoyalBlue
 
 !! URxvt -> font
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
-URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
-URxvt.italicFont: xft:DejaVu Sans Mono:italic:pixelsize=12:antialias=true:hinting=true
-URxvt.bolditalicFont:  xft:DejaVu Sans Mono:bold:italic:pixelsize=12:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=15:antialias=true:hinting=true
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=15:antialias=true:hinting=true
+URxvt.italicFont: xft:DejaVu Sans Mono:italic:pixelsize=15:antialias=true:hinting=true
+URxvt.bolditalicFont:  xft:DejaVu Sans Mono:bold:italic:pixelsize=15:antialias=true:hinting=true
 
 !! URxvt -> libs
 urxvt.perl-lib: /usr/lib/urxvt/perl/
