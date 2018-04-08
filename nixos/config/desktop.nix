@@ -6,11 +6,13 @@ let
 in {
   environment.systemPackages = with pkgs; [
     arc-theme arc-icon-theme
+    ponymix
     elementary-icon-theme
     pulseaudioFull pasystray
     pavucontrol
     zoom-us
     gnome3.nautilus
+    gnome3.gedit
     arandr
     gnupg
     networkmanagerapplet
@@ -24,6 +26,7 @@ in {
     gnome3.file-roller
     mirage
     shutter
+    xorg.xmodmap xorg.xev acpid
   ];
   
   # Enable the X11 windowing system.
@@ -51,5 +54,20 @@ in {
   };
   hardware.bumblebee.enable = true;
   hardware.bluetooth.enable = true;
+
+  services.acpid.enable = true;
+
+  services.acpid.handlers.volumeDown = {
+    event = "button/volumedown";
+    action = "${pkgs.alsaUtils}/bin/amixer -c0 set Master 3%-";
+  };
+  services.acpid.handlers.volumeUp = {
+    event = "button/volumeup";
+    action = "${pkgs.alsaUtils}/bin/amixer -c0 set Master 3%+";
+  };
+  services.acpid.handlers.mute = {
+    event = "button/mute";
+    action = "${pkgs.alsaUtils}/bin/amixer set Master -c0 toggle";
+  };
 }
 

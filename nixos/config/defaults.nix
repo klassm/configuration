@@ -32,6 +32,7 @@ in  {
     cron
     udiskie
     pass
+    dpkg
   ];
 
   networking = {

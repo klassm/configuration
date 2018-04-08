@@ -48,6 +48,8 @@ in {
     postgresql
     scaleft-client-tools
     openssl
+    phantomjs2
+    graphviz
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];
