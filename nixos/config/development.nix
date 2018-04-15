@@ -9,9 +9,9 @@ in {
         (self: super:
          let
            name = "idea-ultimate-${version}";
-           version = "2018.1";
-           sha256 = "0n98gjm3v7qdyd1hc82zg57gyhwbamf27dyal1z71xfav4z5zb10";
-           oldVersion = "2017.2.5"; # super.lib.getVersion super.idea.idea-ultimate;
+           version = "2018.1.1";
+           sha256 = "0a86md3a543wcrjdgr4z90p6k9186i101j62b91ybp9v4f7xx7i5";
+           oldVersion = "2018.1"; # super.lib.getVersion super.idea.idea-ultimate;
            overlayIsNewer =  super.lib.versionOlder oldVersion version;
          in if overlayIsNewer
             then {
