@@ -8,6 +8,7 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "git://github.com/jessek/hashdeep";
     rev = "877613493ff44807888ce1928129574be393cbb0";
+    sha256 = "0yjsv9sdf54q1qnspwva5hgwcb347vzarz1y1n88gjn1ayb9x8mv";
   };
 
   buildInputs = [ pkgconfig automake autoconf ];

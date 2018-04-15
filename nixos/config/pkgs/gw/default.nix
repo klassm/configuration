@@ -7,6 +7,7 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "git://github.com/klassm/gradle-wrapper";
     rev = "a7a877a8fdd25aa68413481cab81d362b41a2a3e";
+    sha256 = "0p1l6kp64xgg3h7l4xk4w7icma7qfs8ai6bz0ipihy6y11ypi91v";
   };
 
   buildInputs = [ pkgconfig ];

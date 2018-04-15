@@ -14,7 +14,7 @@ in {
     gnome3.nautilus
     gnome3.gedit
     libcanberra_gtk3 gtk-engine-murrine
-    arandr
+    arandr feh
     gnupg
     networkmanagerapplet
     blueman volumeicon
@@ -42,9 +42,8 @@ in {
     exportConfiguration = true;
     libinput.enable = true;
     windowManager.i3.enable = true;
-    localectlFix.enable = true;
 
-    displayManager.logToJournal = true;
+    displayManager.job.logToJournal = true;
     displayManager.lightdm.enable = true;
   };
 

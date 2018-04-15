@@ -16,7 +16,6 @@ in  {
       ./desktop.nix
       ./i3.nix
       ./terminal.nix
-      ./localectl_fix.nix
     ];
 
   nixpkgs.config = {
