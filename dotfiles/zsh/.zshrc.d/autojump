@@ -1,0 +1,2 @@
+local AUTOJUMP=$(autojump-share)
+source "${AUTOJUMP}/autojump.zsh"

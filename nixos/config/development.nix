@@ -50,6 +50,7 @@ in {
     openssl
     phantomjs2
     graphviz
+    autojump
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];
