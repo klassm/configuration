@@ -13,6 +13,7 @@ in {
     zoom-us
     gnome3.nautilus
     gnome3.gedit
+    libcanberra_gtk3 gtk-engine-murrine
     arandr
     gnupg
     networkmanagerapplet
@@ -27,6 +28,9 @@ in {
     mirage
     shutter
     xorg.xmodmap xorg.xev acpid
+    system-config-printer gutenprint hplip
+    evince
+    x11vnc
   ];
   
   # Enable the X11 windowing system.
@@ -69,5 +73,12 @@ in {
     event = "button/mute";
     action = "${pkgs.alsaUtils}/bin/amixer set Master -c0 toggle";
   };
+
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.splix pkgs.gutenprint pkgs.hplip ];
+
+  services.virtualbox.host = { enable = true; enableHardening = false; };
+
+  networking.firewall.allowedTCPPorts = [ 5900 5901 5902 ];
 }
 

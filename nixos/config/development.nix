@@ -40,7 +40,7 @@ in {
     figlet hashdeep
     unstable.yarn
     jq
-    virtualbox
+    unstable.virtualbox
     virtmanager qemu aqemu libvirt
     gw
     awscli
@@ -55,6 +55,8 @@ in {
   virtualisation.libvirtd.extraOptions = ["-l"];
   virtualisation.libvirtd.extraConfig = "listen_tls = 0\nlisten_tcp = 1";
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  #nixpkgs.config.virtualbox.enableExtensionPack = true;
 
   boot.kernelModules = [ "kvm-intel" ];
 }
