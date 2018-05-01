@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/bash
 
 # Lock screen displaying this image.
-i3lock-fancy
+dm-tool lock
 
 # Turn the screen off after a delay.
 sleep 60; pgrep i3lock && xset dpms force off

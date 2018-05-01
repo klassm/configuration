@@ -5,7 +5,7 @@ let
 
 in {
   environment.systemPackages = with pkgs; [
-    arc-theme arc-icon-theme
+    arc-theme arc-icon-theme lightdm
     ponymix
     elementary-icon-theme
     pulseaudioFull pasystray
@@ -31,6 +31,12 @@ in {
     system-config-printer gutenprint hplip
     evince
     x11vnc
+    spice-gtk
+    gimp
+    tightvnc
+    calibre
+    sshfs unrar
+    libreoffice
   ];
   
   # Enable the X11 windowing system.

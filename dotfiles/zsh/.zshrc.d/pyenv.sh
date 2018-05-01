@@ -1,4 +1,6 @@
 export PYENV_ROOT="$HOME/.pyenv"
-eval "$(direnv hook zsh)"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+#eval "$(direnv hook zsh)"
 
 

@@ -25,13 +25,14 @@ in  {
 
   environment.systemPackages = with pkgs; [ 
     zip unzip
-    openjdk python3 nodejs-8_x
+    openjdk nodejs-8_x
     cryptsetup
     stow
     cron
     udiskie
     pass
     dpkg
+    bind
   ];
 
   networking = {
