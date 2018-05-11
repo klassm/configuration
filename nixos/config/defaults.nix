@@ -33,18 +33,23 @@ in  {
     pass
     dpkg
     bind
+    iptables
+    traceroute
   ];
 
   networking = {
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      # allowedTCPPorts = [ 80 443 ];
-      allowPing = false;
+      allowedTCPPorts = [ 9592 8593 8594  9586 9089 9090 9091 9092 9093 9094 ];
+      allowPing = true;
     };
     hostName = "lolonix";
-  };
 
+    #bridges = {
+    #    br0 = { interfaces = [ "enp62s0u1u4" ]; };
+    #};
+  };
   security = {
     sudo.extraConfig = ''
       ALL  ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/systemctl suspend

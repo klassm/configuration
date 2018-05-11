@@ -1,16 +1,17 @@
 { config, pkgs, expr, buildVM, ... }:
 
-let
-  unstable = import <unstable> {};
 
-in {
+
+ let
+  unstable = import <unstable> {};
+  in {
   nixpkgs.overlays =
       [
         (self: super:
          let
            name = "idea-ultimate-${version}";
-           version = "2018.1.2";
-           sha256 = "041swacdkcv6dp7y146ra4zm3vj66pgnphhg69ifq2y8v7yz1a60";
+           version = "2018.1.3";
+           sha256 = "0m410ydj88yxdnhljyhi4ccgpn4c1nf5fz61l77mn10g1zjblpac";
            oldVersion = "2018.1"; # super.lib.getVersion super.idea.idea-ultimate;
            overlayIsNewer =  super.lib.versionOlder oldVersion version;
          in if overlayIsNewer
@@ -80,6 +81,8 @@ in {
     readline
     zlib
     leiningen
+    wine winetricks cabextract
+    nodePackages.gulp
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];

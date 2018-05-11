@@ -12,7 +12,7 @@ case "$1" in
         ;;
     suspend)
 		~/.screenlayout/display.py intern
-        lock #systemctl suspend && lock
+        systemctl suspend && lock
         ;;
     hibernate)
         systemctl hibernate

@@ -6,6 +6,7 @@
     co = checkout
 [core]
     autocrlf = input
+	excludesfile = ~/.gitignore
 
 [includeIf "gitdir:~/IdeaProjects/tng/"]
   path = ~/.gitconfig-tng

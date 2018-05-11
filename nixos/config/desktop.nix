@@ -32,11 +32,12 @@ in {
     evince
     x11vnc
     spice-gtk
-    gimp
+    gimp inkscape
     tightvnc
     calibre
-    sshfs unrar
+    sshfs unrar telnet bridge-utils
     libreoffice
+    google-chrome
   ];
   
   # Enable the X11 windowing system.
@@ -48,6 +49,7 @@ in {
     exportConfiguration = true;
     libinput.enable = true;
     windowManager.i3.enable = true;
+    desktopManager.xterm.enable = false;
 
     displayManager.job.logToJournal = true;
     displayManager.lightdm.enable = true;

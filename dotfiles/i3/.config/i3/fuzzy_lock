@@ -1,8 +1,9 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 # Lock screen displaying this image.
 dm-tool lock
 
 # Turn the screen off after a delay.
-sleep 60; pgrep i3lock && xset dpms force off
+sleep 60; xset dpms force off
+
 

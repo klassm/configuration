@@ -1,7 +1,7 @@
 { stdenv, fetchurl, pkgconfig, unzip, pkgs }:
 
 stdenv.mkDerivation rec {
-  version = "0.11.4";
+  version = "0.11.7";
   name = "terraform-${version}";
 
   # Work around the "unpacker appears to have produced no directories"
@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip";
-    sha256 = "817be651ca41b999c09250a9fcade541a941afab41c0c663bd25529a4d5cfd31";
+    sha256 = "061lwac64rkgq920j1px947frpd0pi53170rf0zjm6x58xvfd33b";
   };
   
   buildInputs = [ pkgconfig unzip ];

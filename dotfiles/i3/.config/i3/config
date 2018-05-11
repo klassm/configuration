@@ -184,6 +184,7 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
+for_window [title="^Android Emulator.*"] floating enable border pixel 5
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -246,7 +247,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id thunderbird
 exec --no-startup-id ~/.config/i3/random_wallpaper.sh
-exec --no-startup-id ~/.i3/startup
+#exec --no-startup-id ~/.i3/startup
 
 # Theme colors
 client.focused #4557ff #4557ff #000000 #FFFFFF
