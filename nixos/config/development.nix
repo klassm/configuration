@@ -29,6 +29,8 @@
         )
       ];
 
+
+
   environment.systemPackages =  let 
     myPythonPackages = pythonPackages: with pythonPackages; [
       pandas
@@ -82,6 +84,7 @@
     zlib
     leiningen
     wine winetricks cabextract
+    packer
     nodePackages.gulp
   ];
   virtualisation.libvirtd.enable = true;

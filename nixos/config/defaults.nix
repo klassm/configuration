@@ -35,6 +35,7 @@ in  {
     bind
     iptables
     traceroute
+    inetutils
   ];
 
   networking = {

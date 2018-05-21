@@ -38,6 +38,8 @@ in {
     sshfs unrar telnet bridge-utils
     libreoffice
     google-chrome
+    desktop-file-utils
+    teamviewer
   ];
   
   # Enable the X11 windowing system.
