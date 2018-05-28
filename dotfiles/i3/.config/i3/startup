@@ -1,3 +1,2 @@
 #!/run/current-system/sw/bin/bash
-xautolock -time 5 -locker ~/.config/i3/fuzzy_lock & 
-
+xautolock -time 5 -locker "dm-tool -lock"

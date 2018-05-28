@@ -10,8 +10,8 @@
         (self: super:
          let
            name = "idea-ultimate-${version}";
-           version = "2018.1.3";
-           sha256 = "0m410ydj88yxdnhljyhi4ccgpn4c1nf5fz61l77mn10g1zjblpac";
+           version = "2018.1.4";
+           sha256 = "1122dhk7ad3a8iw7fs55kg7cjj657hcxbk2ykhd3x0h2759y25pv";
            oldVersion = "2018.1"; # super.lib.getVersion super.idea.idea-ultimate;
            overlayIsNewer =  super.lib.versionOlder oldVersion version;
          in if overlayIsNewer
@@ -19,7 +19,7 @@
               idea-ultimate = super.jetbrains.idea-ultimate.overrideAttrs ( oldAttrs: {
                 inherit name version;
                 src = super.fetchurl {
-                  url = "https://download.jetbrains.com/idea/ideaIU-${version}.tar.gz";
+                  url = "https://download-cf.jetbrains.com/idea/ideaIU-${version}.tar.gz";
                   inherit sha256;
                 };
               });

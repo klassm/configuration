@@ -89,5 +89,7 @@ in {
   services.virtualbox.host = { enable = true; enableHardening = false; };
 
   networking.firewall.allowedTCPPorts = [ 5900 5901 5902 ];
+
+  services.teamviewer.enable = true;
 }
 
