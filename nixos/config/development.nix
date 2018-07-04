@@ -10,8 +10,8 @@
         (self: super:
          let
            name = "idea-ultimate-${version}";
-           version = "2018.1.4";
-           sha256 = "1122dhk7ad3a8iw7fs55kg7cjj657hcxbk2ykhd3x0h2759y25pv";
+           version = "2018.1.5";
+           sha256 = "1mf57m3qypapkwniphlica4q49jal22aavxrbynsjgpcacvyq301";
            oldVersion = "2018.1"; # super.lib.getVersion super.idea.idea-ultimate;
            overlayIsNewer =  super.lib.versionOlder oldVersion version;
          in if overlayIsNewer
@@ -86,6 +86,9 @@
     wine winetricks cabextract
     packer
     nodePackages.gulp
+    perlPackages.IOSocketSSL
+    perlPackages.EmailOutlookMessage 
+    avrdude
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.libvirtd.extraOptions = ["-l"];
@@ -95,7 +98,10 @@
   #nixpkgs.config.virtualbox.enableExtensionPack = true;
 
 
-  networking.extraHosts = "127.0.0.1 test.local";
+  networking.extraHosts = ''
+    127.0.0.1 test.local
+    127.0.0.1 lolonix
+  '';
   boot.kernelModules = [ "kvm-intel" ];
 }
 

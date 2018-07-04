@@ -4,25 +4,21 @@
 
 { config, pkgs, ... }:
 
-let
-  unstable = import <unstable> {};
+{
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = import /etc/nixos/config/pkgs;
+  };
 
-in  {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./klassm.nix
+ imports =
+    [
+       ./klassm.nix
       ./development.nix
       ./mail.nix
       ./desktop.nix
       ./i3.nix
       ./terminal.nix
     ];
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = import /etc/nixos/config/pkgs;
-  };
-
   environment.systemPackages = with pkgs; [ 
     zip unzip
     openjdk nodejs-8_x
@@ -36,6 +32,7 @@ in  {
     iptables
     traceroute
     inetutils
+    exfat ntfs3g
   ];
 
   networking = {
@@ -47,9 +44,6 @@ in  {
     };
     hostName = "lolonix";
 
-    #bridges = {
-    #    br0 = { interfaces = [ "enp62s0u1u4" ]; };
-    #};
   };
   security = {
     sudo.extraConfig = ''

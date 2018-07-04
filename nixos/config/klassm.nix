@@ -34,7 +34,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/5 * * * *      klassm    /home/klassm/.config/i3/random_wallpaper.sh > /tmp/random_wallpaper.log"
+      "*/5 1-7,17-23 * * *      klassm    /home/klassm/.config/i3/random_wallpaper.sh > /tmp/random_wallpaper.log"
     ];
   };
 }

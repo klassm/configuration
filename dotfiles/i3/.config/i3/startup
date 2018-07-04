@@ -1,2 +1,4 @@
 #!/run/current-system/sw/bin/bash
-xautolock -time 5 -locker "dm-tool -lock"
+xautolock -time 5 -locker "dm-tool -lock" &
+udiskie -tn -f nautilus  &
+

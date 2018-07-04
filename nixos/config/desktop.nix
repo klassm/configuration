@@ -1,7 +1,11 @@
 { config, pkgs, expr, buildVM, ... }:
 
 let
-  unstable = import <unstable> {};
+    unstable = import <unstable> {
+      # pass the nixpkgs config to the unstable alias
+      # to ensure `allowUnfree = true;` is propagated:
+      config = config.nixpkgs.config;
+    };
 
 in {
   environment.systemPackages = with pkgs; [
@@ -10,7 +14,7 @@ in {
     elementary-icon-theme
     pulseaudioFull pasystray
     pavucontrol
-    zoom-us
+    unstable.zoom-us
     gnome3.nautilus
     gnome3.gedit
     libcanberra_gtk3 gtk-engine-murrine
@@ -36,7 +40,7 @@ in {
     tightvnc
     calibre
     sshfs unrar telnet bridge-utils
-    libreoffice
+    libreoffice-fresh
     google-chrome
     desktop-file-utils
     teamviewer
