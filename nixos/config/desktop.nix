@@ -14,7 +14,7 @@ in {
     elementary-icon-theme
     pulseaudioFull pasystray
     pavucontrol
-    unstable.zoom-us
+    zoom-us
     gnome3.nautilus
     gnome3.gedit
     libcanberra_gtk3 gtk-engine-murrine

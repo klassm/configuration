@@ -38,7 +38,7 @@
   networking = {
     networkmanager.enable = true;
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [ 9592 8593 8594  9586 9089 9090 9091 9092 9093 9094 ];
       allowPing = true;
     };

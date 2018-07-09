@@ -54,6 +54,7 @@
   ]; 
   in with pkgs; [
     (python3.withPackages myPythonPackages)
+    bzip2
     terraform-fixed
     unstable.ansible
     redis
@@ -61,7 +62,7 @@
     unstable.flyway
     git
     idea-ultimate
-    unstable.android-studio
+    unstable.android-studio androidsdk
     figlet hashdeep
     unstable.yarn
     jq
