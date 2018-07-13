@@ -10,4 +10,4 @@ H=$(date +%H)
 #fi
 date
 echo "chose ${PIC}"
-DISPLAY=:0 feh --bg-scale "${PIC}"
+feh --bg-scale "${PIC}"

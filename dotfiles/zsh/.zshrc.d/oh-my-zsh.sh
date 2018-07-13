@@ -1,7 +1,7 @@
-ZSH_THEME="bira"
+export ZSH="/home/klassm/.oh-my-zsh"
 
-plugins=(git pyenv)
+ZSH_THEME="bira"
+plugins=(git pyenv zsh-peco-history)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_PECO_HISTORY
 

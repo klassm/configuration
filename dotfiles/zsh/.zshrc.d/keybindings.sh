@@ -1,8 +1,5 @@
-
-# Coming from 'cat' and then pressing the key
-bindkey "^[^[[C" forward-word
-bindkey "^[^[[D" backward-word
-
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
 
 
 
