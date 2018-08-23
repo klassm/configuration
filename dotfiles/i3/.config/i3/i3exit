@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 lock() {
     ~/.config/i3/fuzzy_lock
 }
@@ -11,7 +11,7 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-		~/.screenlayout/display.py intern
+		python3 ~/.screenlayout/display.py intern
         systemctl suspend && lock
         ;;
     hibernate)

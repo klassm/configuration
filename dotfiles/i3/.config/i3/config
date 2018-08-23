@@ -36,11 +36,11 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id zsh -c "rofi -show run"
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Start Applications
 # bindsym $mod+F1 exec thunderbird
@@ -183,8 +183,11 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="scrcpy"] floating enable border normal
 for_window [title="^Android Emulator.*"] floating enable border pixel 5
-
+for_window [title="Participants.*"] floating enable border normal
+for_window [title="^ImageMagick.*"] floating enable border normal
+for_window [title="Zoom Group Chat"] floating enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -306,7 +309,7 @@ mode "$mode_system" {
 bindsym $mod+Shift+x mode "$mode_system"
 set $mode_system (l)ock (e)xit switch_(u)ser (s)uspend (h)ibernate (r)eboot (Shift+s)hutdown
 
-exec --no-startup-id xautolock -time 4 -locker "dm-tool -lock"
+exec --no-startup-id xautolock -time 4 -locker "gnome-screensaver-command -l"
 
 
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 '-5%' && killall -USR1 i3status

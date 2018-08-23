@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Lock screen displaying this image.
-dm-tool lock
+gnome-screensaver-command -l
 
 # Turn the screen off after a delay.
 sleep 60; xset dpms force off

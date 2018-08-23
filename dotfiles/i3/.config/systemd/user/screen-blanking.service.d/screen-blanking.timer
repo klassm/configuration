@@ -1,0 +1,10 @@
+[Unit]
+Description=Screen blanking service timer for every minute
+Requires=screen-blanking.service
+
+[Timer]
+OnBootSec=0min
+OnCalendar=*:0/1
+
+[Install]
+WantedBy=default.target
