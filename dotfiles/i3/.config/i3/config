@@ -74,8 +74,8 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+odiaeresis move right
 
-bindysm $mod+Alt+Right move workspace to output right
-bindysm $mod+Alt+Left move workspace to output left
+bindsym $mod+Alt+Right move workspace to output right
+bindsym $mod+Alt+Left move workspace to output left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -282,12 +282,12 @@ for_window [class="^.*"] border pixel 2
 
 set $mode_display Screen (d) default, (r) extern right, (l) extern left (c) clone (h) only extern (a) augsburg
 mode "$mode_display" {
-    bindsym d exec --no-startup-id python3 ~/.screenlayout/display.py intern, mode "default"
-    bindsym l exec --no-startup-id python3 ~/.screenlayout/display.py extend_left, mode "default"
-    bindsym r exec --no-startup-id python3 ~/.screenlayout/display.py extend_right, mode "default"
-    bindsym c exec --no-startup-id python3 ~/.screenlayout/display.py clone, mode "default"
-    bindsym h exec --no-startup-id python3 ~/.screenlayout/display.py extern, mode "default"
-    bindsym a exec --no-startup-id ~/.screenlayout/augsburg.sh, mode "default"
+    bindsym d exec --no-startup-id ~/.config/i3/screen.sh intern, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/screen.sh extend_left, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/screen.sh extend_right, mode "default"
+    bindsym c exec --no-startup-id ~/.config/i3/screen.sh clone, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/screen.sh extern, mode "default"
+    bindsym a exec --no-startup-id ~/.config/i3/screen.sh augsburg, mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }

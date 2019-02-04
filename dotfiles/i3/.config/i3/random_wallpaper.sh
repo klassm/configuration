@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 WALLPAPERS=/home/klassm/Bilder/wallpaper
-PIC="$(find ${WALLPAPERS} -type f | shuf -n 1)"
+PIC="$(find ${WALLPAPERS} -type f -name *.jpg | shuf -n 1)"
 
 H=$(date +%H)
 #if (( 8 <= 10#$H && 10#$H < 16 )); then 
