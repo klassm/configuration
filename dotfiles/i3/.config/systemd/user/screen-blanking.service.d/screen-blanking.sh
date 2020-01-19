@@ -28,12 +28,13 @@ if [ -n ${active_window_id} ] && xprop -id ${active_window_id} _NET_WM_STATE 2> 
         xautolock -disable
 
         active_window_name=$(xprop -id ${active_window_id} WM_CLASS | cut -d '"' -f 4)
+        echo  "Disabled screen blanking - '${active_window_name}' in fullscreen" | systemd-cat -p info
         #notify "Disabled screen blanking - '${active_window_name}' in fullscreen"
     fi
 elif [ ${state} = "disabled" ]; then
     echo "Active window is not in fullscreen state -> Enable screen blanking"
     xset s on +dpms
     xautolock -enable
-
+    echo 'Re-enabled screen blanking' | systemd-cat -p info
     #notify "Re-enabled screen blanking"
 fi

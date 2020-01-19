@@ -5,3 +5,6 @@ Description=Screen blanking check service (disable it if fullscreen app is detec
 Type=oneshot
 Environment=DISPLAY=:0
 ExecStart=/home/klassm/.config/systemd/user/screen-blanking.service.d/screen-blanking.sh
+
+[Install]
+WantedBy=default.target

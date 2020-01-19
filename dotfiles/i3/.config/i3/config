@@ -11,8 +11,8 @@ set $mod Mod4
 workspace_layout tabbed
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
-new_float normal
+default_border pixel 2
+default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
@@ -54,7 +54,7 @@ bindsym $mod+Ctrl+x exec xkill
 bindsym $mod+Ctrl+v exec roficlip
 bindsym $mod+Ctrl+p exec rofi-pass
 
-# focus_follows_mouse no
+#focus_follows_mouse no
 
 # change focus
 bindsym $mod+j focus left
@@ -184,12 +184,14 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="scrcpy"] floating enable border normal
-for_window [title="^Android Emulator.*"] floating enable border pixel 5
+for_window [title="^Android Emulator.*"] floating enable border pixel 1
 for_window [title="Participants.*"] floating enable border normal
 for_window [title="^ImageMagick.*"] floating enable border normal
 for_window [title="Zoom Group Chat"] floating enable border normal
+for_window [title="Polls"] floating enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -252,9 +254,9 @@ exec --no-startup-id ~/.config/i3/random_wallpaper.sh
 #exec --no-startup-id ~/.i3/startup
 
 # Theme colors
-client.focused #4557ff #4557ff #000000 #FFFFFF
-client.unfocused #222222 #222222 #b6bdff #222222
-client.urgent #274D01 #900000 #FFFFFF #900000
+client.focused #4557ff #4557ff #000000 #FFFFFF #285577
+client.unfocused #222222 #222222 #b6bdff #222222 #285577
+client.urgent #274D01 #900000 #FFFFFF #900000 #285577
 
 #############################
 ### settings for i3-gaps: ###

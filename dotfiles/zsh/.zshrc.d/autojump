@@ -1,2 +1,2 @@
 AUTOJUMP="/usr/share/autojump"
-source "${AUTOJUMP}/autojump.zsh"
+lazy_source "${AUTOJUMP}/autojump.zsh"
