@@ -1,4 +1,4 @@
-export ZSH="/home/klassm/.oh-my-zsh"
+export ZSH="/Users/klassm/.oh-my-zsh"
 
 ZSH_THEME="bira"
 plugins=(git pyenv zsh-peco-history kubectl gulpw zsh-syntax-highlighting zsh-autosuggestions)

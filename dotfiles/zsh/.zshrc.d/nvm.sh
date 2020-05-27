@@ -1,5 +1,8 @@
-NVM_SOURCE=$HOME/.nvm/nvm.sh
-lazy_source nvm $NVM_SOURCE
+#!/usr/bin/env bash
+
+#lazy_source nvm $NVM_SOURCE
+source $(brew --prefix nvm)/nvm.sh
+
 
 export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

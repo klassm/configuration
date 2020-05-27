@@ -12,3 +12,6 @@
   path = ~/.gitconfig-tng
 [includeIf "gitdir:~/IdeaProjects/bsh/"]
   path = ~/.gitconfig-tng
+
+[init]
+  templatedir = ~/.git_template

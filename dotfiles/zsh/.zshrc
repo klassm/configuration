@@ -1,6 +1,5 @@
 export LC_CTYPE=en_US.UTF-8
 export EDITOR=vim
-xrandr --output eDP1 --primary
 lazy_source () {
     eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
 }
